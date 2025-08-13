@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+.env
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Prefect
+.prefect/
+flow-runs/
+
+# Temporary files
+*.tmp
+*.temp

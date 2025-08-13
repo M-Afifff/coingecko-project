@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: crypto_raw
+    description: "Raw cryptocurrency data from ETL pipeline"
+    tables:
+      - name: crypto_prices
+        description: "Raw cryptocurrency price data"
+        columns:
+          - name: crypto_id
+            description: "Unique cryptocurrency identifier"
+            tests:
+              - not_null
+          - name: current_price
+            description: "Current price in USD"
+            tests:
+              - not_null

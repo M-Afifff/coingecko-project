@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: coingecko_postgres
+    environment:
+      POSTGRES_DB: coingecko_db
+      POSTGRES_USER: intj_user
+      POSTGRES_PASSWORD: kyUUbi96
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U intj_user -d coingecko_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:

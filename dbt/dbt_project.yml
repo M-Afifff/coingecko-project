@@ -1,0 +1,21 @@
+name: 'crypto_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'crypto_analytics'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  crypto_analytics:
+    staging:
+      +materialized: view
+      +tags: ["staging"]
+    intermediate:
+      +materialized: view  
+      +tags: ["intermediate"]
+    marts:
+      +materialized: table
+      +tags: ["marts"]

@@ -1,0 +1,12 @@
+crypto_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: 172.28.6.126
+      user: intj_user
+      password: kyUUbi96
+      port: 5434
+      dbname: coingecko_db
+      schema: public
+      threads: 4
