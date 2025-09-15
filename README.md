@@ -1,11 +1,11 @@
 # Cryptocurrency ETL Pipeline
 
-A complete data engineering pipeline that extracts cryptocurrency data from the CoinGecko API, transforms it using dimensional modeling techniques, and loads it into a PostgreSQL data warehouse with automated orchestration.
+An end-to-end data engineering pipeline that extracts cryptocurrency data from the CoinGecko API, transforms it using dimensional modeling techniques, and loads it into a PostgreSQL data warehouse with automated orchestration.
 
 ## Architecture Overview
 
 ```
-CoinGecko API → Python ETL → PostgreSQL → dbt (Star Schema) → Streamlit Dashboard
+CoinGecko API → Python ETL → PostgreSQL → dbt → Streamlit Dashboard
 ```
 
 **Components:**
@@ -30,7 +30,7 @@ CoinGecko API → Python ETL → PostgreSQL → dbt (Star Schema) → Streamlit 
 - **Python**: Core ETL logic and data processing
 - **PostgreSQL**: Data warehouse and storage
 - **dbt**: Data transformation and dimensional modeling
-- **Prefect**: Workflow orchestration and monitoring
+- **Prefect**: Workflow orchestration and logging/monitoring
 - **Streamlit**: Interactive dashboard and visualization
-- **Plotly**: Advanced charting and data visualization
+- **Plotly**: Charting and data visualization
 - **SQLAlchemy**: Database connectivity and ORM
