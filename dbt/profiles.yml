@@ -3,11 +3,11 @@ crypto_analytics:
   outputs:
     dev:
       type: postgres
-      host: 172.28.6.126
-      user: intj_user
-      password: kyUUbi96
-      port: 5434
-      dbname: coingecko_db
+      host: localhost
+      user: pg_username
+      password: pg_password
+      port: 5432
+      dbname: database
       schema: public
       threads: 4
 # Updated: Mon Sep 15 13:54:14 +08 2025
