@@ -34,4 +34,4 @@ def setup_logger(name="crypto_etl"):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
     
-    return logger
+    return logger# Updated: Mon Sep 15 13:54:14 +08 2025

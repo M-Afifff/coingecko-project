@@ -104,4 +104,4 @@ class CryptoTransformer:
                 'min': str(df['last_updated'].min()),
                 'max': str(df['last_updated'].max())
             }
-        }
+        }# Updated: Mon Sep 15 13:54:14 +08 2025

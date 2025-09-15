@@ -19,3 +19,4 @@ models:
     marts:
       +materialized: table
       +tags: ["marts"]
+# Updated: Mon Sep 15 13:54:14 +08 2025

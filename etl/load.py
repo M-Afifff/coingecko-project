@@ -111,4 +111,4 @@ class CryptoLoader:
                 conn.execute(text("SELECT 1"))
             return True
         except:
-            return False
+            return False# Updated: Mon Sep 15 13:54:14 +08 2025

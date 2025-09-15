@@ -86,4 +86,4 @@ def run_etl_pipeline() -> Dict:
 
 if __name__ == "__main__":
     result = run_etl_pipeline()
-    exit(0 if result['success'] else 1)
+    exit(0 if result['success'] else 1)# Updated: Mon Sep 15 13:54:14 +08 2025

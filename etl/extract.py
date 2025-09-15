@@ -52,4 +52,4 @@ class CryptoExtractor:
             response = requests.get(f"{self.base_url}/ping", timeout=10)
             return response.status_code == 200
         except:
-            return False
+            return False# Updated: Mon Sep 15 13:54:14 +08 2025
