@@ -1,0 +1,50 @@
+# Welcome to your prefect.yaml file! You can use this file for storing and managing
+# configuration for deploying your flows. We recommend committing this file to source
+# control along with your flow code.
+
+# Generic metadata about this project
+name: coingecko-project
+prefect-version: 2.13.0
+
+# build section allows you to manage and build docker images
+build:
+
+# push section allows you to manage if and how this project is uploaded to remote locations
+push:
+
+# pull section allows you to provide instructions for cloning this project in remote locations
+pull:
+- prefect.deployments.steps.git_clone:
+    repository: https://github.com/M-Afifff/CoinGecko-project.git
+    branch: main
+
+# the deployments section allows you to provide configuration for deploying flows
+deployments:
+- name: crypto-etl-pipeline
+  version:
+  tags: []
+  description: Complete crypto data pipeline with Prefect orchestration
+  entrypoint: etl/prefect_flow.py:crypto_prefect_flow
+  parameters: {}
+  work_pool:
+    name: default
+    work_queue_name:
+    job_variables: {}
+  schedule:
+    cron: 0 0 */2 * * *
+    timezone:
+    day_or: true
+- name: crypto-etl-local
+  version:
+  tags: []
+  description: Complete crypto data pipeline with Prefect orchestration
+  entrypoint: etl/prefect_flow.py:crypto_prefect_flow
+  parameters: {}
+  work_pool:
+    name: default
+    work_queue_name:
+    job_variables: {}
+  schedule:
+    cron: 0 0 */2 * * *
+    timezone:
+    day_or: true

@@ -1,4 +1,5 @@
--- Marts layer
+-- dbt/models/marts/crypto_summary.sql 
+
 {{ config(materialized='table') }}
 
 WITH latest_raw AS (
@@ -46,7 +47,29 @@ SELECT
     
     -- Timestamps
     r.extracted_date,
-    r.extracted_at as last_updated
+    r.extracted_at as last_updated,
+    
+    -- Foreign Keys
+    {{ dbt_utils.generate_surrogate_key(['r.crypto_id']) }} as crypto_sk,
+    CASE 
+        WHEN r.rank <= 10 THEN 1
+        WHEN r.rank <= 50 THEN 2
+        WHEN r.rank <= 100 THEN 3
+        ELSE 4
+    END as market_tier_sk,
+    CASE 
+        WHEN r.current_price < 0.01 THEN 1
+        WHEN r.current_price < 1.00 THEN 2
+        WHEN r.current_price < 100.00 THEN 3
+        WHEN r.current_price < 10000.00 THEN 4
+        ELSE 5
+    END as price_category_sk,
+    CASE 
+        WHEN r.price_change_24h > 5 THEN 1
+        WHEN r.price_change_24h > 0 THEN 2
+        WHEN r.price_change_24h > -5 THEN 3
+        ELSE 4
+    END as performance_sk
     
 FROM latest_raw r
 LEFT JOIN latest_metrics m 
