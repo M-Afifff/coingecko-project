@@ -5,7 +5,7 @@ load_dotenv()
 
 # Database
 DATABASE_URL = os.getenv('DATABASE_URL', 
-    'postgresql://username:password@localhost:5432/database')
+    'postgresql://pg_username:pg_password@localhost:5432/database')
 
 # API
 COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
